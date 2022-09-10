@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@id/constraint"
+    android:layout_height="match_parent"
+    android:background ="@drawable/constraint_back"
+    android:layout_marginTop="20dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.EditTaskFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/constraint_back">
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:id="@+id/tv_category"
+        android:text="Inbox"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="32sp"
+        android:textSize="32sp"
+        android:fontFamily="@font/sfprodisplay"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_height="wrap_content"/>
+
+    <com.google.android.material.textview.MaterialTextView
+        android:layout_width="wrap_content"
+        android:id="@+id/tv_tasks_count"
+        app:layout_constraintTop_toBottomOf="@id/tv_category"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginStart="60dp"
+        android:textSize="16sp"
+        android:fontFamily="@font/medium"
+        android:layout_marginTop="3dp"
+        android:layout_height="wrap_content"
+        android:text="1 task"/>
+
+    <androidx.appcompat.widget.AppCompatImageButton
+        android:id="@+id/btn_edit"
+        android:layout_width="24dp"
+        android:layout_marginTop="32dp"
+        android:layout_height="24dp"
+        android:background="@color/green_c"
+        app:layout_constraintBottom_toBottomOf="@id/tv_category"
+        android:layout_marginEnd="14dp"
+        android:src="@drawable/ic_edit"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/rv_tasks"
+        app:layout_constraintTop_toBottomOf="@id/tv_tasks_count"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="20dp"
+        tools:listitem="@layout/task_item_layout"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.appcompat.widget.LinearLayoutCompat>
